@@ -1,48 +1,65 @@
-/* ------------  
+/* ------------
    Globals.js
 
    Global CONSTANTS and _Variables.
-   (Global over both the OS and Hardware Simulation / Host.)
-   
-   This code references page numbers in the text book: 
-   Operating System Concepts 8th edition by Silberschatz, Galvin, and Gagne.  ISBN 978-0-470-12872-5
+   (Global over both the OS and Hardware Simulation.)
+
+   This code references page numbers in the text book:
+   Operating System Concepts 8th editiion by Silberschatz, Galvin, and Gagne.  ISBN 978-0-470-12872-5
    ------------ */
 
 //
-// Global CONSTANTS
+// Global Constants
 //
-var APP_NAME = "AlanBBOS";  // 'cause I was at a loss for a better name.
-var APP_VERSION = "0.07";   // What did you expect?
+var APP_NAME = "HemanthVOS";  // 'cause I was at a loss for a better name.
+var APP_VERSION = "1.0"
 
-var CPU_CLOCK_INTERVAL = 100;   // This is in ms, or milliseconds, so 1000 = 1 second.
-
-var TIMER_IRQ = 0;  // Pages 23 (timer), 9 (interrupts), and 561 (interrupt priority).
-                    // NOTE: The timer is different from hardware/host clock pulses. Don't confuse these.
-var KEYBOARD_IRQ = 1;  
-
+var CPU_CLOCK_INTERVAL = 100;   // in ms, or milliseconds, so 1000 = 1 second.
+var TIMER_IRQ    = 0;  // Pages 23 (timer), 9 (interrupts), and 561 (interrupt priority).
+                       // NOTE: The timer is different from hardware clock pulses. Don't confuse these.
+var KEYBOARD_IRQ = 1;
+var SYSTEMCALL_IRQ    = 2;
+var CONTEXT_SWITCH_IRQ= 3;
+var SCHEDULER_QUANTUM = 6;
+var CLOCK_INTERVAL = 100;   // microseconds
+var TODAY_DATE = new Date();
+var COUNTRY_NAME = "United States";
+var STATE = "NY";
+var CITY = "Poughkeepsie";
+var POSTAL_CODE = 12601;
 
 //
 // Global Variables
 //
 var _CPU = null;
-
 var _OSclock = 0;       // Page 23.
-
 var _Mode = 0;   // 0 = Kernel Mode, 1 = User Mode.  See page 21.
 
-var _Canvas = null;               // Initialized in hostInit().
-var _DrawingContext = null;       // Initialized in hostInit().
-var _DefaultFontFamily = "sans";  // Ignored, I think. The was just a place-holder in 2008, but the HTML canvas may have use for it.
-var _DefaultFontSize = 13;
-var _FontHeightMargin = 4;        // Additional space added to font size when advancing a line.
+
+// TODO: Fix the naming convention for these next five global vars.
+var CANVAS = null;              // Initialized in hostInit().
+var DRAWING_CONTEXT = null;     // Initialized in hostInit().
+var DEFAULT_FONT = "sans";      // Ignored, just a place-holder in this version.
+var DEFAULT_FONT_SIZE = 13;
+var FONT_HEIGHT_MARGIN = 4;     // Additional space added to font size when advancing a line.
 
 // Default the OS trace to be on.
 var _Trace = true;
+var _HardwareClockId = -1;
 
 // OS queues
 var _KernelInterruptQueue = null;
 var _KernelBuffers = null;
 var _KernelInputQueue = null;
+var _CPU = null;
+var _Scheduler = null;
+var _MemoryManagement = null;
+var _Memory = null;
+var _MemoryAccessor = null;
+var _KernelJobQueue = null;
+var _KernelReadyQueue = null;
+var _KernelWaitingQueue = null;
+var _ActiveProcess = null;
 
 // Standard input and output
 var _StdIn  = null;
@@ -55,8 +72,10 @@ var _OsShell = null;
 // At least this OS is not trying to kill you. (Yet.)
 var _SarcasticMode = false;
 
+//
 // Global Device Driver Objects - page 12
+//
 var krnKeyboardDriver = null;
 
-// For testing...
-var _GLaDOS = null;
+var _Status = null;
+

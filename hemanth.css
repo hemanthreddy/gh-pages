@@ -1,48 +1,193 @@
-/* alanbbos.css */
+/* hemanthvos.css */
 
-body {
-   background: #909193 url(images/linen.png) repeat;
-   font-family: Helvetica, Verdana, Arial, sans-serif;
-	font-size: 12pt;
-	font-weight: normal;
-	font-style: normal;
+body
+{
+    background-color: #909193;	/* The bottom color of background.jpg. */
+    background-image: url(images/background.jpg);
+    background-repeat: repeat-x;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1 {
-   color: black;
-	font-size: 24pt;
-	font-weight: normal;
-	font-style: normal;	
-   border-bottom: 1px solid black;
+h1 
+{ 
+    color: black;
+    font-size:   24pt;
+    font-weight: normal;
+    font-style: normal;	
+    border-bottom: 1px solid #dad8ed;  
 }
 
-h2 {
-   color: black;
-	font-size: 20pt;
-	font-weight: normal;
-	font-style: normal;
+h2
+{
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size:   16pt;
+    font-weight: normal;
+    font-style: normal;	
 }
 
-h3 {
-	font-family: Helvetica, Verdana, Arial, sans-serif;
-	font-size: 16pt;
-	font-weight: normal;
-	font-style: normal;	
+p.breadcrumbs
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: normal;
+    line-height: normal;
+    color: green;
+    position: relative;
+    top: -16px;
 }
 
-#display {
-	background-color:#DFDBC3;
-	border: 2px solid red; 
-	cursor: default;
+td.section
+{
+    border-top: 1px solid blue;
+    padding-top: 6px;
+    padding-bottom: 6px;	
 }
 
-.normal_button {
-	width: 100px;
+td.heading
+{
+    background-color: black;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
 }
 
-.footerText {
-   color: black;
-   font-family: Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-   text-align: center;
+#frame
+{
+    width: 1000px;
+    height:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 10px;			/* set in init() */
+    border-width: 6px;		/* set in init() */
+    border-style: double;
+    border-color: #dad8ed;  /* "circles" light-blueish */
 }
+
+#display
+{
+    background-color: #DFDBC3;
+    border: 2px solid red; 
+    cursor: default;
+}
+
+.subheading
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.instructions
+{
+    font-size:10pt;
+    font-weight: normal;
+    font-style: normal;	
+}
+
+.widget
+{
+    width:100%;
+    position: relative;	
+    background-color: #dad8ed; /* was #99ffff */;
+    border: 1px solid blue;	
+}
+
+.small_button
+{
+    width: 60px;
+}
+
+.normal_button
+{
+    width: 100px;
+}
+
+.large_button
+{
+    width: 180px;
+}
+
+.footer 
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+
+.label
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+.status
+{
+     height: 60px;
+     width: 500px;
+     background-color: #111;
+     border: 1px white;
+     overflow:auto;
+     font-family: Courier New, sans-serif;
+     font-size: 12pt;
+     color: #eee;
+}
+
+.statusDate
+{
+     text-align: left;
+}
+
+.machine
+{
+     width: 300px;
+     border: 1px white;
+     font-family: Courier New, sans-serif;
+     background-color: #111;
+     font-size: 12pt;
+     color: #eee;
+     overflow: auto;
+}
+
+.pcbCode
+{
+     height: 120px;
+     width: 300px;
+     border: 1px white;
+     font-family: Courier New, sans-serif;
+     font-size: 12pt;
+     background-color: #111;
+     color: #eee;
+     overflow: auto;
+     text-align: center;
+}
+
+.cpuCode
+{
+     height: 80px;
+     width: 300px;
+     border: 1px white;
+     font-family: Courier New, sans-serif;
+     background-color: #111;
+     font-size: 12pt;
+     color: #eee;
+     overflow: none;
+     text-align: center;
+}
+
+.memoryCode
+{
+     height: 188px;
+     width: 300px;
+     border: 1px white;
+     font-family: Courier New, sans-serif;
+     background-color: #111;
+     font-size: 12pt;
+     color: #eee;
+     overflow: auto;
+     text-align: center;
+}
+
